@@ -51,7 +51,7 @@
 #(Optativo) Determina cual de los 3 puntos A, B o C, se encuentra más lejos del origen, punto (0,0).
 #Crea un rectángulo utilizando los puntos A y B.
 #Consulta la base, altura y área del rectángulo.
-
+import math
 
 class Punto:
     def __init__(self, x, y):
@@ -59,8 +59,11 @@ class Punto:
         self.y=y
 
 
+    def __str__(self):
+        return"("+str(self.x)+","+str(self.y)+")"    
 
     def cuadrante(self):
+        cuadrante=None
         if self.x ==0 and self.y==0:
             cuadrante="Punto de origen"  
         elif self.x >0 and self.y >0:
@@ -85,3 +88,11 @@ class Punto:
         ABx = Bx - self.x
         ABy= By - self.y
         print("El vector AB: [",ABx, ABy,"]")
+        BAx= self.x-Bx
+        BAy=self.y-By
+        print("El vector BA es: [",BAx, BAy,"]")
+        return [ABx, ABy],[BAx, BAy]
+
+
+
+    

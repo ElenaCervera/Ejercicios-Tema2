@@ -16,13 +16,26 @@ class Texto:
         l=len(self.texto)
         frase=[]
         for i in range(l):
-            print(self.texto[i])
             letra=self.texto[i]
             if letra=="#":
                 frase.append(i)
         frase.append(l)      
-        print(frase)      
+        principio=0
+        fin=0
+        oracion=[]
+        for frases in frase:
+            fin=frases
+            text=self.texto[principio:fin]
+            principio=fin + 1
+            t=text.capitalize()
+            oracion.append(t)
+        print()
+        for o in oracion:
+            print(o)    
+        
 
 
 
 texto="un día que el viento soplaba con fuerza#mira como se mueve aquella banderola -dijo un monje#lo que se mueve es el viento -respondió otro monje#ni las banderolas ni el viento, lo que se mueve son vuestras mentes -dijo el maestro"
+texto_n=Texto(texto)
+texto_n.separar_texto()

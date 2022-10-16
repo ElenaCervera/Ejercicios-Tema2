@@ -52,7 +52,7 @@
 #Crea un rectángulo utilizando los puntos A y B.
 #Consulta la base, altura y área del rectángulo.
 import math
-from re import X
+
 
 class Punto:
     def __init__(self, x, y):
@@ -78,7 +78,7 @@ class Punto:
             cuadrante="Eje x"
         elif self.x ==0 and self.y !=0:
             cuadrante="Eje y"
-            return cuadrante
+        return cuadrante
 
     def vector(self):
         print('\n El método vector calcula el vector resultante entre dos puntos')     

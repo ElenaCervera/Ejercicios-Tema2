@@ -14,7 +14,11 @@
 #La función sum(lista) devuelve una suma de los elementos de una lista.
 
 lista_num=[56,24,15,7,51,36,36,45,24,97,49,81,22,3,4]
-def modificar():
-    
+def modificar(lista):
+ lista=list(set(lista))
+ lista.sort(reverse=True) 
+ 
+ 
+ 
 
 

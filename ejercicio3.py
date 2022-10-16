@@ -13,10 +13,37 @@
 #Recordatorio
 #La función sum(lista) devuelve una suma de los elementos de una lista.
 
-lista_num=[56,24,15,7,51,36,36,45,24,97,49,81,22,3,4]
-def modificar(lista):
- lista=list(set(lista))
- lista.sort(reverse=True) 
+class ej_lista:
+
+  def __init__(self,lista):
+    self.lista=lista
+  
+  def ordenar(self):
+    lista=self.lista
+    lista.sort(reverse=True) 
+    return lista
+  def eliminar_impar(self):
+    lista_par=[]
+    self.lista.sort()
+    for n in self.lista:
+        if n%2==0:
+         lista_par.append(n)
+    suma=sum(lista_par)
+    lista_par.insert(0,suma)
+
+    return lista_par
+  
+
+lista=[15,28,14,69,75,32,1,5,9,78,4,6]
+lista_n=ej_lista(lista)
+print(lista_n.ordenar())
+print(lista_n.eliminar_impar())
+print(lista)
+
+nueva_lista=modificar(lista)
+print( nueva_lista[0] == sum(nueva_lista[1:]) )
+
+
  
  
  

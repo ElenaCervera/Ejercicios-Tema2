@@ -52,6 +52,7 @@
 #Crea un rectángulo utilizando los puntos A y B.
 #Consulta la base, altura y área del rectángulo.
 import math
+from re import X
 
 class Punto:
     def __init__(self, x, y):
@@ -62,8 +63,7 @@ class Punto:
     def __str__(self):
         return"("+str(self.x)+","+str(self.y)+")"    
 
-    def cuadrante(self):
-        cuadrante=None
+    def cuadrant(self):
         if self.x ==0 and self.y==0:
             cuadrante="Punto de origen"  
         elif self.x >0 and self.y >0:
@@ -104,6 +104,26 @@ class Punto:
 
         distancia=math.sqrt((Vx**2)+(Vy**2))
         return distancia
+
+punto=Punto(1,2)
+print(punto)
+print(punto.cuadrant())
+print(punto.vector())
+print(punto.distancia())
+
+
+class Rectangulo:
+    def __init__(self,RAx, RAy):
+        self.RAx= RAx
+        self.RAy= RAy
+        
+    def base (self):
+        return abs(self.RAx)
+    def altura(self):
+        return abs(self.RAy)
+    def area(self):
+        return self.base()*self.altura()
+
 
 
 

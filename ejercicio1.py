@@ -82,7 +82,7 @@ class Punto:
 
     def vector(self):
         print('\n El método vector calcula el vector resultante entre dos puntos')     
-        print("Escribe las coordenadas del punto B")
+        print("Escribe las coordenadas del punto B:")
         Bx=int(input("Coordenada x:"))
         By=int(input("Coordenada y:"))
         ABx = Bx - self.x
@@ -92,6 +92,19 @@ class Punto:
         BAy=self.y-By
         print("El vector BA es: [",BAx, BAy,"]")
         return [ABx, ABy],[BAx, BAy]
+
+    def distancia(self):
+        print('\n El método distancia calcula la distancia entre los dos puntos')     
+        print("Escribe las coordenadas del punto B:")
+        Bx=int(input("Coordenada x:"))
+        By=int(input("Coordenada y:"))
+        Vx = Bx - self.x
+        Vy= By - self.y
+        print("El vector AB: [",Vx, Vy,"]")
+
+        distancia=math.sqrt((Vx**2)+(Vy**2))
+        return distancia
+
 
 
 

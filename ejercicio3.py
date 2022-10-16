@@ -18,30 +18,36 @@ class ej_lista:
   def __init__(self,lista):
     self.lista=lista
   
-  def ordenar(self):
+  def modificar(self):
     lista=self.lista
     lista.sort(reverse=True) 
     return lista
-  def eliminar_impar(self):
+
+  def eliminar_impares(self):
     lista_par=[]
-    self.lista.sort()
     for n in self.lista:
         if n%2==0:
          lista_par.append(n)
-    suma=sum(lista_par)
-    lista_par.insert(0,suma)
 
+    suma=sum(lista_par)
+    lista_par.insert(0,suma)     
     return lista_par
+  
+
+
+  
   
 
 lista=[15,28,14,69,75,32,1,5,9,78,4,6]
 lista_n=ej_lista(lista)
-print(lista_n.ordenar())
-print(lista_n.eliminar_impar())
-print(lista)
+print(lista_n.modificar())
+print(lista_n.eliminar_impares())
 
-nueva_lista=modificar(lista)
-print( nueva_lista[0] == sum(nueva_lista[1:]) )
+print(lista_n)
+
+nueva_lista=lista_n.eliminar_impares()
+print(nueva_lista[0]== sum(nueva_lista[1:]))
+
 
 
  
